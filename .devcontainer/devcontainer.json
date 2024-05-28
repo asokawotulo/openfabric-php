@@ -1,0 +1,25 @@
+{
+	"name": "PHP",
+	"image": "mcr.microsoft.com/devcontainers/php:1-8.0-bullseye",
+    "customizations": {
+		"vscode": {
+			"extensions": [
+				"amirmarmul.laravel-blade-vscode",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}/.oh-my-zsh,target=/home/vscode/.oh-my-zsh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.zshrc,target=/home/vscode/.zshrc,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.spaceshipconfig,target=/home/vscode/.spaceshipconfig,type=bind,consistency=cached"
+	],
+	"runArgs": [
+		"--network=host",
+		"--name=vsc-openfabric_php"
+	]
+}
