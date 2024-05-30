@@ -15,4 +15,18 @@ class UtilsTest extends TestCase {
 
 		$this->assertEquals('dGVzdDp0ZXN0', $token);
 	}
+
+	public function testGetArrayByPath()
+	{
+		$array = [
+			'foo' => [
+				'bar' => 'foobar',
+			],
+		];
+
+		$this->assertEquals(
+			$array['foo']['bar'],
+			Utils::getArrayByPath($array, 'foo.bar')
+		);
+	}
 }
