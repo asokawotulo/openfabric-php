@@ -17,9 +17,13 @@ class OpenFabricTest extends TestCase
 
 		$this->assertEquals(OpenFabric::SANDBOX_URL, OpenFabric::getApiUrl(), 'Change environment to sandbox');
 
+		$this->assertEquals(OpenFabric::SANDBOX_AUTH_URL, OpenFabric::getAuthUrl(), 'Change environment to sandbox');
+
 		OpenFabric::setEnv(OpenFabric::PRODUCTION);
 
 		$this->assertEquals(OpenFabric::PRODUCTION_URL, OpenFabric::getApiUrl(), 'Change environment to production');
+
+		$this->assertEquals(OpenFabric::PRODUCTION_AUTH_URL, OpenFabric::getAuthUrl(), 'Change environment to production');
 	}
 
 	public function testThrowInvalidArgumentException()
