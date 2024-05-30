@@ -10,6 +10,12 @@ class AuthenticationTest extends TestCase
 	{
 		parent::setUp();
 		OpenFabric::setEnv(OpenFabric::SANDBOX);
+
+		$clientId = $_ENV['CLIENT_ID'];
+		$clientSecret = $_ENV['CLIENT_SECRET'];
+
+		OpenFabric::setClientId($clientId);
+		OpenFabric::setClientSecret($clientSecret);
 	}
 
 	protected function tearDown(): void
@@ -20,12 +26,7 @@ class AuthenticationTest extends TestCase
 
 	public function testRequestAccessToken()
 	{
-		OpenFabric::setEnv(OpenFabric::SANDBOX);
-
-		$clientId = $_ENV['CLIENT_ID'];
-		$clientSecret = $_ENV['CLIENT_SECRET'];
-
-		$token = Authentication::requestAccessToken($clientId, $clientSecret);
+		$token = Authentication::requestAccessToken();
 
 		$this->assertNotEmpty($token);
 		$this->assertObjectHasAttribute('access_token', $token);

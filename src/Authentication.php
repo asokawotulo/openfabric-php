@@ -8,8 +8,11 @@ use OpenFabric\Common\Utils;
 
 class Authentication
 {
-	public static function requestAccessToken(string $clientId, string $clientSecret)
+	public static function requestAccessToken()
 	{
+		$clientId = OpenFabric::getClientId();
+		$clientSecret = OpenFabric::getClientSecret();
+
 		$token = Utils::generateBasicAuthToken($clientId, $clientSecret);
 
 		$guzzleClient = new Client([
