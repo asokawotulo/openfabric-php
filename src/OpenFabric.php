@@ -33,6 +33,11 @@ class OpenFabric
 	public static $clientSecret;
 
 	/**
+	 * @var string
+	 */
+	public static $accessToken;
+
+	/**
 	 * Get the API URL
 	 * 
 	 * @return string 
@@ -112,6 +117,27 @@ class OpenFabric
 	public static function setClientSecret(string $clientSecret)
 	{
 		self::$clientSecret = $clientSecret;
+	}
+
+	/**
+	 * Get access token
+	 * 
+	 * @return string
+	 */
+	public static function getAccessToken()
+	{
+		return self::$accessToken;
+	}
+
+	/**
+	 * Set access token
+	 * 
+	 * @param string $accessToken 
+	 * @return void 
+	 */
+	public static function setAccessToken(string $accessToken)
+	{
+		self::$accessToken = $accessToken;
 	}
 
 	/**

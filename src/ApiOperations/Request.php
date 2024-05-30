@@ -23,10 +23,10 @@ trait Request
 		}
 	}
 
-	protected static function _request($method, $url, $params = [])
+	protected static function _request($method, $url, $params = [], $headers = [])
 	{
 		$httpClient = new HttpClient();
 
-		return $httpClient->request($method, $url, $params);
+		return $httpClient->request($method, $url, $params, $headers);
 	}
 }

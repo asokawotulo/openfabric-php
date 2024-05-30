@@ -16,9 +16,9 @@ class HttpClient
 	/**
 	 * @return array
 	 */
-	public function request($method, $url, $params)
+	public function request($method, $url, $params, $headers)
 	{
-		return json_decode($this->_requestRaw($method, $url, $params), true);
+		return json_decode($this->_requestRaw($method, $url, $params, $headers));
 	}
 
 	/**
@@ -35,7 +35,7 @@ class HttpClient
 			]
 		);
 
-		return $response->getBody();
+		return $response->getBody()->getContents();
 	}
 
 	/**
