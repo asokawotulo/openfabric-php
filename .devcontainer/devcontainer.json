@@ -4,9 +4,9 @@
     "customizations": {
 		"vscode": {
 			"extensions": [
-				"amirmarmul.laravel-blade-vscode",
 				"eamodio.gitlens",
-				"ms-azuretools.vscode-docker"
+				"bmewburn.vscode-intelephense-client",
+				"xdebug.php-debug"
 			],
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "zsh"
