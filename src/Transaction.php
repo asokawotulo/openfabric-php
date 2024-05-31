@@ -3,12 +3,14 @@
 namespace OpenFabric;
 
 use OpenFabric\ApiOperations\Create;
+use OpenFabric\ApiOperations\Get;
 use OpenFabric\ApiOperations\Request;
 
 class Transaction
 {
-	use Create;
 	use Request;
+	use Create;
+	use Get;
 
 	public static function classUrl()
 	{
