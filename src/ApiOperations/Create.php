@@ -3,7 +3,6 @@
 namespace OpenFabric\ApiOperations;
 
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\RequestOptions;
 use OpenFabric\OpenFabric;
 
 trait Create
